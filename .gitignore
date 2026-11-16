@@ -1,0 +1,6 @@
+node_modules/
+swift/.build/
+.build/
+bin/apple-fm-bridge
+*.log
+.DS_Store
