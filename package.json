@@ -1,0 +1,37 @@
+{
+  "name": "opencode-apple-foundation-models",
+  "version": "0.1.0",
+  "description": "OpenCode provider for Apple's on-device Foundation Models via a local Swift bridge",
+  "type": "module",
+  "license": "MIT",
+  "exports": {
+    ".": "./src/index.ts",
+    "./tui": "./src/tui.ts"
+  },
+  "files": [
+    "src",
+    "bin",
+    "scripts",
+    "swift/Package.swift",
+    "swift/Sources",
+    "README.md",
+    "opencode.json.example"
+  ],
+  "scripts": {
+    "build:swift": "bash scripts/build-swift.sh",
+    "build:swift:universal": "bash scripts/build-swift.sh --universal",
+    "typecheck": "tsc --noEmit",
+    "test": "bun test",
+    "prepublishOnly": "bash scripts/build-swift.sh --universal"
+  },
+  "dependencies": {
+    "@opencode/plugin": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.1.14",
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
