@@ -1,0 +1,33 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": ["opencode-apple-foundation-models"],
+  "provider": {
+    "apple-fm": {
+      "name": "Apple Foundation Models (PCC + On-Device)",
+      "options": {
+        "pccFailover": {
+          "enabled": true,
+          "defaultCooldownMinutes": 30,
+          "autoSwitchBack": true,
+          "notifyOnSwitch": true
+        }
+      },
+      "models": {
+        "apple-hybrid": {
+          "name": "Apple Hybrid (PCC with On-Device FM Failover)",
+          "limit": {
+            "context": 16384,
+            "output": 4096
+          }
+        },
+        "apple-on-device": {
+          "name": "Apple Foundation Model (Strict On-Device)",
+          "limit": {
+            "context": 8192,
+            "output": 2048
+          }
+        }
+      }
+    }
+  }
+}
